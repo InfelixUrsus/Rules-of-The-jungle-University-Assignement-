@@ -7,8 +7,6 @@
 struct Card{
     int rank[12]; // Value from 2 to 14 (where 11 = Jack, 12 = Queen, 13 = King, 14 = Ace)
     char suit[3]; // 'H' for Hearts, 'D' for Diamonds, 'C' for Clubs, 'S' for Spades
-
-
 }
     
 struct Player{
@@ -66,16 +64,28 @@ Card* deck, hearts, spades, clubs, diamonds;
 }
 
 Card *create_playerhand(int handsize){
-
+ Card playerhand = (int*)malloc(handsize * sizeof(int));
+ if((playerhand=malloc(sizeof(Card)))==NULL) return 0;
+ return playerhand;
 }
 
 Player *create_player(Card *create_playerhand,int logged_in){
 
 }
 
+
 void save_game(){
- 
-    FILE *SaveFiles;
-    SaveFiles = fopen("Rule_of_the_Jungle_SaveFiles"), "a");
+ FILE *SaveFiles;
+ SaveFiles = fopen("Rule_of_the_Jungle_SaveFiles"), "a");
+ fprintf(fptr, "%s\n%s%s%s%s\n%s\n%s\n%d\n%d\n"name,deck.spades,deck.hearts,deck.clubs,deck.diamonds,player1hand,player2hand,score);
+ fclose(fptr);
+}
+
+void login_Account(){
+	
+}
+
+void game(){
+
 
 }
